@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeUSA — Simulador de Vida nos EUA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            <span class="logo-mark">L</span>
+            <span>LifeUSA</span>
+        </a>
+
+        <nav>
+            <a href="#simulator-start">Simulador</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#entenda-custos">Entenda os custos</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <button class="nav-button" id="startButton">
+            Começar
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    Seu futuro começa aqui
+                </div>
+
+                <h1>
+                    Quanto custa a vida
+                    <span>que você imagina?</span>
+                </h1>
+
+                <p>
+                    Monte sua vida nos Estados Unidos, escolha sua cidade,
+                    sua moradia, seu carro e seu estilo de vida.
+                    Descubra quanto você realmente precisaria ganhar.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button class="primary-button" id="heroStart">
+                        Simular minha vida
+                        <span>→</span>
+                    </button>
+
+                    <button class="secondary-button" id="learnMore">
+                        Entender os custos
+                    </button>
+
+                </div>
+
+                <div class="hero-note">
+                    <span>✦</span>
+                    Valores em dólares americanos
+                    <span>·</span>
+                    Simulação estimada
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PREVIEW
+            ========================== -->
+
+            <div class="preview-area">
+
+                <div class="floating-card card-income">
+
+                    <span>Renda mensal</span>
+
+                    <strong>US$ 6.000</strong>
+
+                </div>
+
+
+                <div class="main-preview">
+
+                    <div class="preview-top">
+
+                        <div>
+
+                            <small>YOUR LIFE</small>
+
+                            <h3>Jacksonville, FL</h3>
+
+                        </div>
+
+                        <div class="location-icon">
+                            FL
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-house">
+
+                        <div class="house-image">
+
+                            <div class="house">
+
+                                <div class="roof"></div>
+
+                                <div class="house-body">
+
+                                    <div class="window"></div>
+
+                                    <div class="door"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-info">
+
+                        <div>
+
+                            <span>Aluguel</span>
+
+                            <strong>US$ 1.650</strong>
+
+                            <small>mensal</small>
+
+                        </div>
+
+                        <div>
+
+                            <span>Carro</span>
+
+                            <strong>US$ 520</strong>
+
+                            <small>parcela</small>
+
+                        </div>
+
+                        <div>
+
+                            <span>Mercado</span>
+
+                            <strong>US$ 480</strong>
+
+                            <small>mensal</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-result">
+
+                        <div>
+
+                            <span>Sobra estimada</span>
+
+                            <strong>US$ 2.165</strong>
+
+                        </div>
+
+                        <div class="score">
+
+                            <span>Score</span>
+
+                            <strong>92</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card card-score">
+
+                    <span>Life Score</span>
+
+                    <div class="score-circle">
+                        92
+                    </div>
+
+                    <small>Muito confortável</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INÍCIO DO SIMULADOR
+        ========================== -->
+
+        <section class="simulator-start" id="simulator-start">
+
+            <div class="simulator-heading">
+
+                <span>YOUR LIFE, YOUR CHOICE</span>
+
+                <h2>
+                    Vamos começar
+                    <br>
+                    pela sua vida.
+                </h2>
+
+                <p>
+                    Primeiro, conte um pouco sobre o cenário
+                    que você quer construir.
+                </p>
+
+            </div>
+
+
+            <div class="simulator-card">
+
+                <div class="step-indicator">
+
+                    <div class="step active">
+                        <span>01</span>
+                        <small>Renda</small>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <span>02</span>
+                        <small>Localização</small>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <span>03</span>
+                        <small>Estilo de vida</small>
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <span class="question-label">
+                        PASSO 01
+                    </span>
+
+                    <h3>
+                        Quanto você ganha por mês?
+                    </h3>
+
+                    <p>
+                        Informe sua renda mensal <strong>bruta</strong> em dólares americanos.
+                    </p>
+
+                    <div class="money-input">
+
+                        <span>US$</span>
+
+                        <input
+                            type="number"
+                            id="incomeInput"
+                            placeholder="5,000"
+                            min="0"
+                            step="100"
+                        >
+
+                        <span>USD / mês</span>
+
+                    </div>
+
+                    <div class="input-explanation">
+                        Exemplo: <strong>US$ 5.000</strong> significa cinco mil dólares americanos por mês.
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="simulator-next"
+                        id="incomeNext"
+                    >
+                        Continuar
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMO FUNCIONA
+        ========================== -->
+
+        <section class="features" id="como-funciona">
+
+            <div class="section-heading">
+
+                <span>COMO FUNCIONA</span>
+
+                <h2>
+                    Você escolhe.
+                    <br>
+                    O LifeUSA calcula.
+                </h2>
+
+                <p>
+                    Construa seu cenário ideal e veja como ele se comportaria
+                    financeiramente na vida real.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Escolha onde viver
+                    </h3>
+
+                    <p>
+                        Selecione estado, cidade e tipo de moradia.
+                        O aluguel é tratado como custo mensal.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Monte seu estilo de vida
+                    </h3>
+
+                    <p>
+                        Considere carro, alimentação, tecnologia,
+                        lazer, seguros e outros gastos.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Descubra seu custo realista
+                    </h3>
+
+                    <p>
+                        Veja renda bruta, impostos estimados,
+                        gastos, renda líquida e quanto sobraria.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ENTENDA OS CUSTOS
+        ========================== -->
+
+        <section class="cost-guide" id="entenda-custos">
+
+            <div class="section-heading centered">
+
+                <span>ENTENDA OS CUSTOS</span>
+
+                <h2>
+                    Antes de simular,
+                    <br>
+                    entenda o que os números significam.
+                </h2>
+
+                <p>
+                    O LifeUSA não trata US$ 500 de carro como se o carro
+                    inteiro custasse US$ 500. Cada valor representa uma
+                    parte diferente da vida financeira.
+                </p>
+
+            </div>
+
+
+            <div class="cost-grid">
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        $
+                    </div>
+
+                    <h3>
+                        Dólar não é real
+                    </h3>
+
+                    <p>
+                        Todos os valores financeiros usados pelo simulador
+                        são em <strong>USD — dólares americanos</strong>.
+                        Se aparecer US$ 5.000, são cinco mil dólares,
+                        não cinco mil reais.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Exemplo</span>
+                        <strong>US$ 5.000 / mês</strong>
+                        <small>renda bruta mensal</small>
+                    </div>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        H
+                    </div>
+
+                    <h3>
+                        Casa x aluguel
+                    </h3>
+
+                    <p>
+                        Quando o simulador mostra, por exemplo,
+                        <strong>US$ 2.000 de moradia</strong>,
+                        isso representa um aluguel mensal estimado.
+                        Não significa que a casa custa US$ 2.000.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Casa própria</span>
+                        <strong>Preço total ≠ parcela</strong>
+                        <small>uma casa pode custar centenas de milhares de dólares</small>
+                    </div>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        C
+                    </div>
+
+                    <h3>
+                        Carro financiado
+                    </h3>
+
+                    <p>
+                        Um carro pode ter um preço total de US$ 30.000,
+                        mas quem financia normalmente paga uma entrada
+                        e parcelas mensais durante vários anos.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Exemplo</span>
+                        <strong>US$ 500 / mês</strong>
+                        <small>parcela estimada, não preço total do carro</small>
+                    </div>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        %
+                    </div>
+
+                    <h3>
+                        Impostos
+                    </h3>
+
+                    <p>
+                        O salário anunciado nem sempre é o dinheiro que
+                        chega à sua conta. O simulador separa a
+                        <strong>renda bruta</strong> da <strong>renda líquida estimada</strong>.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Fluxo</span>
+                        <strong>Bruto → impostos → líquido</strong>
+                        <small>estimativa, não cálculo tributário oficial</small>
+                    </div>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        M
+                    </div>
+
+                    <h3>
+                        Aluguel mobiliado
+                    </h3>
+
+                    <p>
+                        Uma casa ou apartamento mobiliado pode custar
+                        mais por mês, mas pode economizar o dinheiro
+                        necessário para comprar cama, sofá, mesa,
+                        eletrodomésticos e outros itens logo na chegada.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Importante</span>
+                        <strong>Mobiliado = aluguel mensal</strong>
+                        <small>os móveis já fazem parte da propriedade</small>
+                    </div>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="info-icon">
+                        P
+                    </div>
+
+                    <h3>
+                        Poder de compra
+                    </h3>
+
+                    <p>
+                        Não basta converter o dólar para reais.
+                        O que importa é quanto você recebe em dólares
+                        e quanto as coisas custam em dólares.
+                    </p>
+
+                    <div class="info-example">
+                        <span>Comparação</span>
+                        <strong>Salário × custo local</strong>
+                        <small>é isso que o LifeUSA tenta representar</small>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- =========================
+                 IMPOSTOS
+            ========================== -->
+
+            <div class="guide-section">
+
+                <div class="guide-copy">
+
+                    <span class="guide-label">
+                        01 · IMPOSTOS
+                    </span>
+
+                    <h3>
+                        O salário bruto não é o mesmo que o dinheiro disponível.
+                    </h3>
+
+                    <p>
+                        Nos Estados Unidos, uma pessoa pode ter descontos
+                        relacionados a impostos federais e outras contribuições.
+                        O valor exato depende da renda, estado, situação fiscal,
+                        benefícios e outros fatores.
+                    </p>
+
+                    <p>
+                        A Flórida é particularmente interessante porque não
+                        possui imposto estadual individual sobre renda.
+                        Isso não significa que não existam outros impostos:
+                        ainda podem existir imposto federal, Social Security,
+                        Medicare, sales tax, property tax e outros custos.
+                    </p>
+
+                    <div class="notice">
+                        <strong>Importante:</strong>
+                        o LifeUSA usa uma estimativa educacional.
+                        Ele não substitui um contador, tax professional
+                        ou cálculo oficial do IRS.
+                    </div>
+
+                </div>
+
+
+                <div class="tax-card">
+
+                    <span>
+                        EXEMPLO VISUAL
+                    </span>
+
+                    <h4>
+                        Renda mensal
+                    </h4>
+
+                    <strong>
+                        US$ 6.000
+                    </strong>
+
+                    <div class="tax-line">
+                        <span>Renda bruta</span>
+                        <strong>US$ 6.000</strong>
+                    </div>
+
+                    <div class="tax-line">
+                        <span>Impostos estimados</span>
+                        <strong class="tax-negative">
+                            − calculados
+                        </strong>
+                    </div>
+
+                    <div class="tax-line final">
+                        <span>Renda líquida</span>
+                        <strong>
+                            resultado da simulação
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CASA / ALUGUEL
+            ========================== -->
+
+            <div class="guide-section reverse">
+
+                <div class="housing-examples">
+
+                    <div class="housing-row">
+
+                        <div>
+                            <span>Aluguel</span>
+                            <strong>mensal</strong>
+                        </div>
+
+                        <span>US$ 1.500–3.000+</span>
+
+                    </div>
+
+                    <div class="housing-row">
+
+                        <div>
+                            <span>Casa própria</span>
+                            <strong>valor total</strong>
+                        </div>
+
+                        <span>US$ 250k–600k+</span>
+
+                    </div>
+
+                    <div class="housing-row">
+
+                        <div>
+                            <span>Financiamento</span>
+                            <strong>mensal</strong>
+                        </div>
+
+                        <span>depende da entrada + juros</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="guide-copy">
+
+                    <span class="guide-label">
+                        02 · MORADIA
+                    </span>
+
+                    <h3>
+                        Alugar uma casa não significa comprar uma casa.
+                    </h3>
+
+                    <p>
+                        Esse é um dos pontos que o LifeUSA agora deixa explícito.
+                        O simulador trabalha com <strong>aluguel mensal</strong>
+                        quando você escolhe uma moradia para viver.
+                    </p>
+
+                    <p>
+                        Já o preço de uma casa própria é outra informação:
+                        existe o valor total do imóvel, possível entrada,
+                        financiamento, juros, property tax, seguro e,
+                        dependendo do imóvel, HOA.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CARROS
+            ========================== -->
+
+            <div class="guide-section">
+
+                <div class="guide-copy">
+
+                    <span class="guide-label">
+                        03 · CARROS
+                    </span>
+
+                    <h3>
+                        US$ 500 por mês pode ser uma parcela — não o preço do carro.
+                    </h3>
+
+                    <p>
+                        No financiamento, o valor total do carro é dividido
+                        ao longo de um prazo, com juros e normalmente uma
+                        entrada. Por isso, o LifeUSA diferencia
+                        <strong>preço do veículo</strong> de
+                        <strong>parcela mensal</strong>.
+                    </p>
+
+                    <p>
+                        A parcela real depende do preço do carro, entrada,
+                        crédito, taxa de juros e duração do financiamento.
+                        Em 2026, a Experian registrou médias próximas de
+                        US$ 765/mês para carros novos e US$ 542/mês para usados
+                        no segundo trimestre. 
+                    </p>
+
+                </div>
+
+
+                <div class="car-finance-card">
+
+                    <span>EXEMPLO</span>
+
+                    <div class="car-total">
+
+                        <small>Preço do carro</small>
+
+                        <strong>US$ 35.000</strong>
+
+                    </div>
+
+                    <div class="car-finance-line">
+                        <span>Entrada</span>
+                        <strong>US$ 7.000</strong>
+                    </div>
+
+                    <div class="car-finance-line">
+                        <span>Valor financiado</span>
+                        <strong>US$ 28.000</strong>
+                    </div>
+
+                    <div class="car-finance-line">
+                        <span>Parcela estimada</span>
+                        <strong>US$ 500+</strong>
+                    </div>
+
+                    <small class="card-disclaimer">
+                        Exemplo ilustrativo. A parcela real depende
+                        das condições do financiamento.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PODER DE COMPRA
+            ========================== -->
+
+            <div class="purchasing-power">
+
+                <div class="section-heading centered">
+
+                    <span>04 · PODER DE COMPRA</span>
+
+                    <h2>
+                        Não olhe apenas para
+                        <br>
+                        a conversão do dólar.
+                    </h2>
+
+                    <p>
+                        O que importa é a relação entre sua renda
+                        e os preços do lugar onde você vive.
+                    </p>
+
+                </div>
+
+
+                <div class="power-grid">
+
+                    <div class="power-card">
+
+                        <span>ERRADO</span>
+
+                        <strong>
+                            “US$ 5.000 é muito porque convertido
+                            em reais dá muito dinheiro.”
+                        </strong>
+
+                        <p>
+                            A conversão mostra uma equivalência cambial,
+                            mas não mostra seu custo de vida nos EUA.
+                        </p>
+
+                    </div>
+
+
+                    <div class="power-card highlighted">
+
+                        <span>CERTO</span>
+
+                        <strong>
+                            “Eu ganho US$ 5.000 e preciso saber
+                            quanto custa viver onde estou.”
+                        </strong>
+
+                        <p>
+                            Essa comparação considera aluguel,
+                            alimentação, transporte, impostos,
+                            seguro e os demais gastos em dólares.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FONTES
+            ========================== -->
+
+            <div class="sources-note">
+
+                <span>
+                    REFERÊNCIA
+                </span>
+
+                <p>
+                    Os conceitos tributários são baseados em informações
+                    públicas do IRS. Os exemplos de financiamento de veículos
+                    usam como referência dados recentes da Experian.
+                    Os números do simulador são estimativas educacionais
+                    e podem variar bastante conforme cidade, imóvel,
+                    crédito, seguro, veículo e situação fiscal.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA FINAL
+        ========================== -->
+
+        <section class="cta" id="final-cta">
+
+            <div>
+
+                <span>PRONTO?</span>
+
+                <h2>
+                    Construa sua vida ideal.
+                </h2>
+
+                <p>
+                    Agora sabendo o que cada número realmente significa.
+                </p>
+
+            </div>
+
+
+            <button class="primary-button" id="ctaButton">
+                Começar agora →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="sobre">
+
+        <div class="footer-logo">
+
+            <span class="logo-mark">
+                L
+            </span>
+
+            LifeUSA
+
+        </div>
+
+        <p>
+            Simule. Planeje. Construa seu futuro.
+        </p>
+
+        <span class="copyright">
+            © 2026 LifeUSA
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
